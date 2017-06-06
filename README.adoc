@@ -1,0 +1,72 @@
+= Common Jenkins DSL
+
+The repository contains common building blocks for jobs that
+use Jenkins Job DSL in the Spring projects.
+
+== How to build it
+
+```
+./mvnw clean install
+```
+
+== How to use it in Jenkins?
+
+It's more than probable that you'll be using a Gradle to build your
+scripts. It's enough for you to set the following values in
+your buildscript
+
+[source,groovy]
+----
+configurations {
+	libs
+	compile.extendsFrom libs
+}
+
+dependencies {
+	libs "org.springframework.internal:jenkins-common:${jenkinsCommonVersion}"
+}
+
+task libs(type: Copy) {
+	into 'build/lib'
+	from configurations.libs
+}
+
+build.dependsOn libs
+----
+
+That way you'll use the `jenkins-common` as a `compile` dependency
+but also it will get unpacked to `build/lib` folder.
+
+IMPORTANT: Remember to pass the `build/lib/*.jar` as additional classpath
+element of your seed job
+
+Example:
+
+[source,groovy]
+----
+job('spring-cloud-seed') {
+    triggers {
+        githubPush()
+    }
+    scm {
+        git {
+            remote {
+                github('spring-io/build-scripts')
+            }
+            branch('master')
+        }
+    }
+    steps {
+        gradle("clean build")
+        dsl {
+            external('jobs/springcloud/*.groovy')
+            removeAction('DISABLE')
+            removeViewAction('DELETE')
+            ignoreExisting(false)
+            additionalClasspath([
+                    'src/main/groovy', 'src/main/resources', 'build/lib/*.jar'
+            ].join("\n"))
+        }
+    }
+}
+----
