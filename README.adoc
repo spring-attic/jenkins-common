@@ -13,10 +13,18 @@ use Jenkins Job DSL in the Spring projects.
 
 It's more than probable that you'll be using a Gradle to build your
 scripts. It's enough for you to set the following values in
-your buildscript
+your buildscript.
 
 [source,groovy]
 ----
+apply plugin: 'groovy'
+
+repositories {
+	maven { url "http://repo.spring.io/snapshot" }
+	maven { url "http://repo.spring.io/milestone" }
+	maven { url "http://repo.spring.io/release" }
+}
+
 configurations {
 	libs
 	compile.extendsFrom libs
@@ -33,6 +41,9 @@ task libs(type: Copy) {
 
 build.dependsOn libs
 ----
+
+We will be uploading the library artifacts to the `repo.spring.io`
+so we need to add it to the list of repos.
 
 That way you'll use the `jenkins-common` as a `compile` dependency
 but also it will get unpacked to `build/lib` folder.
