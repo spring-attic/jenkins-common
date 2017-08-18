@@ -110,7 +110,6 @@ class CloudFoundryPlugin {
 
 			ManifestChoice(manifestChoice) {
 				this.manifestChoice = manifestChoice
-				instances()
 				domain()
 				timeout()
 				appPath()
