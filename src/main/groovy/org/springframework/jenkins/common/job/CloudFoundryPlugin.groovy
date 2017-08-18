@@ -110,7 +110,6 @@ class CloudFoundryPlugin {
 
 			ManifestChoice(manifestChoice) {
 				this.manifestChoice = manifestChoice
-				memory()
 				instances()
 				domain()
 				timeout()
@@ -125,7 +124,7 @@ class CloudFoundryPlugin {
 				hostname(appName)
 			}
 
-			void memory(int memory = 512) {
+			void memory(int memory = 1024) {
 				(manifestChoice / 'memory').setValue(memory)
 			}
 
