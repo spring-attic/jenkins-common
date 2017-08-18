@@ -34,7 +34,7 @@ class CloudFoundryPlugin {
 			appURIs()
 		}
 
-		void target(String target = 'http://api.run.pivotal.io') {
+		void target(String target = 'https://api.run.pivotal.io') {
 			(builder / 'target').setValue(target)
 		}
 
