@@ -21,11 +21,11 @@ apply plugin: 'groovy'
 
 repositories {
 	// for jenkins-common
-	maven { url "http://repo.spring.io/snapshot" }
-	maven { url "http://repo.spring.io/milestone" }
-	maven { url "http://repo.spring.io/release" }
+	maven { url "https://repo.spring.io/snapshot" }
+	maven { url "https://repo.spring.io/milestone" }
+	maven { url "https://repo.spring.io/release" }
 	// for jenkins-job-dsl plugin
-	maven { url 'http://repo.jenkins-ci.org/releases/' }
+	maven { url 'https://repo.jenkins-ci.org/releases/' }
 }
 
 configurations {
