@@ -10,6 +10,10 @@ import groovy.transform.CompileStatic
 @CompileStatic
 trait JdkConfig {
 
+	String jdk12() {
+		return "jdk12"
+	}
+
 	String jdk11() {
 		return "jdk11"
 	}
