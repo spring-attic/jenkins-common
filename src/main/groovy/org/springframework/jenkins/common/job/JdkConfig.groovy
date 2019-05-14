@@ -11,7 +11,7 @@ import groovy.transform.CompileStatic
 trait JdkConfig {
 
 	String jdk12() {
-		return "jdk12"
+		return "openjdk12"
 	}
 
 	String jdk11() {
