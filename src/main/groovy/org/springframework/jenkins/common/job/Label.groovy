@@ -16,4 +16,8 @@ trait Label {
 	String windows() {
 		return 'win2012'
 	}
+
+	String ubuntu18_04() {
+		return "ubuntu1804"
+	}
 }

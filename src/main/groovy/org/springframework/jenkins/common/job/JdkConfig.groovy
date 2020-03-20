@@ -10,6 +10,14 @@ import groovy.transform.CompileStatic
 @CompileStatic
 trait JdkConfig {
 
+	String jdk15() {
+		return "openjdk15"
+	}
+
+	String jdk14() {
+		return "openjdk14"
+	}
+
 	String jdk13() {
 		return "openjdk13"
 	}
@@ -48,5 +56,9 @@ trait JdkConfig {
 
 	String jdk8DefaultPath() {
 		return '/opt/jdk-8'
+	}
+
+	String openJdk7() {
+		return "linux&&jdk7"
 	}
 }
