@@ -12,7 +12,7 @@
 	<parent>
 		<groupId>org.springframework.cloud</groupId>
 		<artifactId>spring-cloud-build</artifactId>
-		<version>2.1.4.RELEASE</version>
+		<version>2.1.11.RELEASE</version>
 		<relativePath/>
 		<!-- lookup parent from repository -->
 	</parent>
@@ -21,12 +21,12 @@
 		<dependency>
 			<groupId>org.codehaus.groovy</groupId>
 			<artifactId>groovy-all</artifactId>
-			<version>2.4.16</version>
+			<version>2.4.19</version>
 		</dependency>
 		<dependency>
 			<groupId>org.jenkins-ci.plugins</groupId>
 			<artifactId>job-dsl-core</artifactId>
-			<version>1.70</version>
+			<version>1.77</version>
 		</dependency>
 	</dependencies>
 
@@ -51,7 +51,6 @@
 			<!-- Only required if names of spec classes don't match default Surefire patterns (`*Test` etc.) -->
 			<plugin>
 				<artifactId>maven-surefire-plugin</artifactId>
-				<version>2.18.1</version>
 				<configuration>
 					<useFile>false</useFile>
 					<includes>
