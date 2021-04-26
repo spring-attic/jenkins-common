@@ -39,4 +39,8 @@ trait BuildAndDeploy {
 	String masterBranch() {
 		return 'master'
 	}
+
+	String mainBranch() {
+		return 'main'
+	}
 }
