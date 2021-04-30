@@ -11,11 +11,11 @@ import groovy.transform.CompileStatic
 trait JdkConfig {
 
 	String jdk16() {
-		return "openjdk15"
+		return "openjdk16"
 	}
 
 	String jdk15() {
-		return "openjdk16"
+		return "openjdk15"
 	}
 
 	String jdk14() {
