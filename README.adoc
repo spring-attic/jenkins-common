@@ -1,4 +1,6 @@
-= Common Jenkins DSL
+= jenkins-common is no longer actively maintained by VMware, Inc.
+
+= Common Jenkins DSL 
 
 The repository contains common building blocks for jobs that
 use Jenkins Job DSL in the Spring projects.
